@@ -6,6 +6,7 @@
  */
 
 #include <wchar.h>
+#include "common.h"
 
 #ifndef INCLUDE_git_utfconv_h__
 #define INCLUDE_git_utfconv_h__
@@ -16,9 +17,9 @@
 typedef wchar_t git_win32_path_utf16[GIT_WIN_PATH_UTF16];
 typedef char git_win32_path_utf8[GIT_WIN_PATH_UTF8];
 
-// dest_size is the size of dest in wchar_t's
-int git__utf8_to_16(wchar_t * dest, size_t dest_size, const char *src);
-// dest_size is the size of dest in char's
+/** dest_size is the size of dest in wchar_t's */
+int git__utf8_to_16(wchar_t *dest, size_t dest_size, const char *src);
+/** dest_size is the size of dest in char's */
 int git__utf16_to_8(char *dest, size_t dest_size, const wchar_t *src);
 
 GIT_INLINE(int) git__win32_path_utf8_to_16(git_win32_path_utf16 dest, const git_win32_path_utf8 src)
